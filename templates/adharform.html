@@ -12,7 +12,7 @@
 }
 
 body {
-    background: #e28743;
+    background: #ee7913;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,18 +32,6 @@ p {
     line-height: 20px;
     letter-spacing: 0.5px;
     margin: 20px 0 30px;
-}
-
-span {
-    font-size: 12px;
-}
-
-a {
-    color: blue;
-    font-size: 12px;
-    text-decoration: none;
-    margin: 15px 0;
-    cursor: pointer;
 }
 
 button {
@@ -69,7 +57,7 @@ button {
 
 
 .form1 {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     display: flex;
     
     justify-content: center;
@@ -79,25 +67,29 @@ button {
     text-align: center;
 }
 
-input {
+.input1 {
     background-color: #eee;
     border: none;
 	display:inline-block;
-box-sizing:border:box;
+    box-sizing:border:box;
     padding: 12px 15px;
     margin: 8px 0;
     width: 80%;
 }
+.input1.active
+{border: 2px solid rgb(105, 54, 248);
 
+
+}
 .container {
-    background-color: #fff;
+    background-color: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     position: relative;
     overflow: hidden;
     width: 500px;
     max-width: 100%;
-    min-height: 400px;
+    min-height: 440px;
 }
 
 
@@ -117,7 +109,70 @@ box-sizing:border:box;
 	font-size:1.5em;
 	border: 1px solid #FFFFFF;
 }
+.drag-area
+{
+    border: 2px dashed rgb(4, 124, 145);
+    height: 200px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: #baf6fa;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
 
+
+}
+.drag-area.active
+{border: 2px solid #fff;
+
+
+}
+.drag-area i
+{
+    font-size: 30px;
+}
+.drag-area header
+{
+    font-size: 10px;
+    font-weight: 500;
+    color: rgb(40, 27, 230);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.drag-are span
+{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0 15px 0;
+
+}
+.drag-area button{
+    font-size: 15px;
+    
+    border: 1px solid;
+    outline: none;
+    background: #063970;
+    border-radius: 20px;
+    cursor:pointer;
+	display:inline-block;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    box-sizing:border:box;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 40%;
+
+}
+.drag-area img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
 </style>
 </head>
 <body>
@@ -125,38 +180,30 @@ box-sizing:border:box;
     <div class="container" id="container">
 
 	<div>
- 	<form method='POST' class='form1' action='adharform' enctype="multipart/form-data">
-	<h1 style="padding-top: 15px"> ADHAR LINK</h1>
-	<div class='fontuser'>
-	<input type="text" name="adharnum" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" placeholder="0000-0000-0000" autocomplete="off" required autofocus /> 
-	<i class="fa-sharp fa-solid fa-id-card"></i>
+ 	    <form method='POST' class='form1' action='adharform' enctype="multipart/form-data">
+	    <h1 style="padding-top: 15px"> ADHAR LINK</h1>
+	    <div class='fontuser'>
+	        <input type="text" class='input1' name="adharnum" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" placeholder="0000-0000-0000" autocomplete="off" required autofocus /> 
+	            <div><i class="fa-sharp fa-solid fa-id-card"></i></div>
+	    </div>
+    
+	<div class='drag-area'>
+        <div class="icon"><i class="fa-solid fa-file"></i></div>
+        <header>Drag and Drop to Upload</header>
+        <span>OR</span>
+        <button>BROWSE FILE</button>
+	    <input type='file' name='pict' hidden >
 	</div>
-	<div class='fontuser'>
-	<input type='file' name='pict'>
-	<i class="fa-solid fa-file"></i>
-	</div>
-</br>
 </div>
-	<button style="margin-top: 10px;margin-left: 170px">SIGN UP</button>
+<br/>
+    <button style="margin-top:10px;margin-left:180px">SUBMIT</button>
+
 	</form>	
 
-</div>
+</div> 
 
+<script type="text/javascript " src="{{url_for('static', filename='script.js')}}"></script>
 
-
-
-
-
- 	
-
-	 
-
-
-
-
-
-
-
-     
 </body>
-</html> 
+</html>  
+
