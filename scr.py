@@ -108,16 +108,32 @@ def adharform():
             db.session.commit()
             return 'Image uploaded successfully'
 
-        #filename = secure_filename(pic.filename)
-        #mimetype=pic.mimetype
-        #img=adhar2(adhar=adharnum,pic=pic.read(),mimetype=mimetype,name=filename)
-        #db.session.add(img)
-        #db.session.commit()
         return 'already uploaded'
 
 
     return render_template("adharform.html")
+#employee deatail page page 
+@app.route('/jdlwdate',methods=['POST','GET'])
+def jdlwdate():
+    if request.method == "POST":
 
+        cname = request.form['heading']
+        jdate= request.form['date1']
+        ldate=request.form['date2']
+        print('hello')
+        print(cname)
+        print(jdate)
+        print(ldate)
+        emp=employ(compname=cname,joindate=jdate,lastdate=ldate)
+        
+        db.session.add(emp)
+        db.session.commit()
+        
+       
+
+    return render_template("jdlwdate.html")
+    
+	
 #success page 
 @app.route('/success',methods=['POST','GET'])
 def success():
