@@ -1,0 +1,107 @@
+<html>
+   <head>
+      <style>
+            body
+            {
+                background-color: rgb(255, 146, 22);
+                justify-content: center;
+                justify-items: center;
+                align-items: center;
+                background-origin: padding-box;
+                display: flex;
+                flex-direction: column;
+                margin: 120px 0 150px;
+                
+            }
+            .container
+            {
+                background-color: rgb(255, 255, 255);
+                border-radius: 2px;
+                position: relative;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);;
+                overflow: hidden;
+                width: 600px;
+                max-width: 100%;
+                min-height: 300px;
+
+            }
+            .subbtn
+            {
+                width: 200px;
+                height: 40px;
+                background-color: rgb(48, 27, 233);
+                border: 1px;
+                border-radius: 30px;
+                margin-left: 100px;
+                font-size: 15px;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+            .subbtn1
+            {
+                width: 100px;
+                height: 40px;
+                background-color: rgb(228, 21, 21);
+                border: 1px;
+                border-radius: 30px;
+                margin-left: 10px;
+                font-size: 15px;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+            table
+            {
+               border: 2px solid rgb(7, 69, 238);
+            }
+            form
+            {
+               margin-left: 80px;
+            }
+
+      </style>
+   </head>
+   <body>
+   <div class="container">
+   <form action="empeditaction" enctype="multipart/form-data" >
+	<h3>
+         <b >DETAILS OF Emplyoment</b>
+      </h3>
+      <table>
+         <thead>
+            <tr >
+               
+               <th>pic</th>
+	            <th>cname</th>
+               <th>jdate</th>
+	            <th>ldate</th>
+               <th>Action</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for user in employee %}
+               <tr>
+               
+                  <td>{{ user.name1}}</td>
+      
+		            <td>{{ user.compname }}</td>
+                  <td>{{ user.joindate }}</td>
+		            <td>{{ user.lastdate }}</td>
+                  <td><button class="subbtn1">Edit Data</button></td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </form>
+
+
+<div>
+        <form action="/employdetails">
+        <button class="subbtn">Home</button>
+        </form>
+        </div>
+</div>
+   </body>
+</html>
