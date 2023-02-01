@@ -1,0 +1,303 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                background-color: rgb(255, 255, 255);
+                opacity: 90%;
+                background-origin: padding-box;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                
+                
+            }
+            .container
+            {
+                background-color: rgb(119, 246, 255);
+                width: 1000px;
+                height: 1300px;
+                border-radius: 2px;
+                position: relative;
+                display: none;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);;
+                overflow: hidden;
+            }
+            span
+            {
+                font-size: 20px;
+                color: #000;
+                margin-left: 40px;
+            }
+            .emp
+            {
+                width: 900px;
+                height: 180px;
+                background-color: rgb(255, 255, 255);
+                margin-left: 50px;
+                margin-top: 30px;
+            }
+            .e1
+            {
+                width: 820px;
+                height: 30px;
+                background-color: rgb(192, 255, 255);
+                margin-top: 10px;
+                margin-left: 40px;
+            }
+            .e1 span
+            {
+                font-size: 20px;
+
+            }
+            .pan
+            {
+                width: 900px;
+                height: 140px;
+                background-color: rgb(255, 255, 255);
+                margin-left: 50px;
+                margin-top: 30px;
+            }
+            .f
+            {
+                width: 900px;
+                height: 80px;
+                background-color: rgb(255, 255, 255);
+                margin-left: 50px;
+                margin-top: 30px;
+            }
+            .button {
+        background-color: #1c87c9;
+        -webkit-border-radius: 60px;
+        border-radius: 40px;
+        border: none;
+        color: #eeeeee;
+        cursor: pointer;
+        display: inline-block;
+        font-family: sans-serif;
+        font-size: 20px;
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        margin-left: 400px;
+        margin-top: 40px;
+      }
+      @keyframes glowing {
+        0% {
+          background-color: #2ba805;
+          box-shadow: 0 0 5px #2ba805;
+        }
+        50% {
+          background-color: #49e819;
+          box-shadow: 0 0 20px #49e819;
+        }
+        100% {
+          background-color: #2ba805;
+          box-shadow: 0 0 5px #2ba805;
+        }
+      }
+      .button {
+        animation: glowing 1300ms infinite;
+      }
+      h1{
+        font-size: 30px;
+        text-align: center;
+        color: #1c87c9;
+        font-weight: bold;
+      }
+      #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  border-bottom: 16px solid #3498db;
+  border-right: 16px solid #38f831;
+  border-left:16px solid #38f831 ;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+.f1
+{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 50px;
+    padding: 0;
+}
+.f1 h1
+{
+    float:right;
+    font-size: 20px;
+    color: #2ba805;
+}
+
+        </style>
+    </head>
+    <body onload="myFunction()">
+        <div class="f1">
+            <form method='POST' action="alldoc" enctype="multipart/form-data">
+            
+                <h1>{{emailname.emailname}} log in successfully</h1>
+            
+            </form>
+        </div>
+        <div id="loader"></div>
+        <div class="container" id="f1">
+            <h1>
+                EMPLOYEE DETAILS
+            </h1>
+            <form action="alldoc" method="post" enctype="multipart/form-data">
+                <div class="emp">
+                    <span>
+                        Employment *
+                    </span>
+                    <div class="e1">
+                        <span>Employment 1</span><input type="text" name="e1"required/>
+                        <input type="file" name="epic1" required/>
+                    </div>
+                    <div class="e1">
+                        <span>Employment 2</span>
+                        <input type="text" name="e2"/>
+                        <input type="file" name="epic2"/>
+                    </div>
+                    <div class="e1">
+                        <span>Emplyement 3</span>
+                        <input type="text" name="e3"/>
+                        <input type="file" name="epic3"/>
+                    </div>
+                </div>
+                <div class="emp">
+                    <span>
+                        Education *
+                    </span>
+                    <div class="e1">
+                        <span>School</span>
+                        <input type="text" name="ed1" required/>
+                        <input type="file" name="edpic1"/>
+                    </div>
+                    <div class="e1">
+                        <span>Pre-School</span>
+                        <input type="text" name="ed2"required/>
+                        <input type="file" name="edpic2" required/>
+                    </div>
+                    <div class="e1">
+                        <span>Degree</span>
+                        <input type="text" name="ed3" required/>
+                        <input type="file" name="edpic3" required/>
+                    </div>
+
+                </div>
+                <div class="emp">
+                    
+                    <span>
+                        Passport *
+                    </span>
+                    <div class="e1">
+                        <span>Passport Number</span>
+                        <input type="text" name="pass1" required/>
+                        
+                    </div>
+                    <div class="e1">
+                        <span>Expiry Date</span>
+                        <input type="date" name="edate"required/>
+                        
+                    </div>
+                    <div class="e1">
+                        <span>Upload Passport</span>
+                        <input type="file" name="passpic" required/>
+                    </div>
+                </div>
+                    
+
+                
+                <div class="pan">
+                    <span>
+                        Pan Card *
+                    </span>
+                    <div class="e1">
+                        <span>Pan Number</span>
+                        <input type="text" name="pannum" required/>
+                        
+                    </div>
+                    <div class="e1">
+                        <span>Upload Pan Card</span>
+                        <input type="file" name="panpic" required/>
+                    </div>
+                </div>
+                <div class="pan">
+                    <span>
+                        Adhar Card *
+                    </span>
+                    <div class="e1">
+                        <span>Adhar Number</span>
+                        <input type="text" name="anum" required/>
+                        
+                    </div>
+                    <div class="e1">
+                        <span>Upload Adhar Card</span>
+                        <input type="file" name="apic"required/>
+                    </div>
+
+                </div>
+                <div class="f">
+                    <span>
+                        Form 16
+                    </span>
+                    <div class="e1">
+                        <span>Upload Form 16</span>
+                        <input type="file" name="frm16"required/>
+                    </div>
+
+                </div>
+                <button type="submit" class="button">Click here!</button>
+            </form>
+        </div>
+        <script>
+            var myVar;
+            
+            function myFunction() {
+              myVar = setTimeout(showPage, 3000);
+            }
+            
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("f1").style.display = "block";
+            }
+            </script>
+            
+    </body>
+</html>
